@@ -1,44 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
-    <style>
-        
+    <title>Super contador</title>
+      <style>
+        section {
+            background-color: rgb(192, 186, 186);
+            border-radius: 5px;
+            text-indent: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.644);
+            padding: 5px;
+            padding-bottom: 20px;
+            margin: auto;
+            width: 500px;
+            line-height: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
         header > h1 {
             text-align: center;
         }
-
-        main #formulário {
-            background-color: rgb(206, 204, 204);
-            width: 500px;
-            height: 175px;
-            padding: 2px;
-            border-radius: 10px;
-            text-indent: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-            margin: auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.623);
-        }
+       
+        
     </style>
 </head>
 <body>
     <header>
-        <h1>Formulário de gênero e idade</h1>
+        <h1>Super contador</h1>
     </header>
-    <main>
-        <section>
-            <div id="formulário">
-                <p>Ano de nascimento:
-                    <input type="number" name="nasc" id="nasc" min="0">
-                </p>
-                <p>Sexo:
-                    <input type="radio" name="gen" id="masc">
-                    <label for="masc">Masculino</label>
-                    <input type="radio" name="gen" id="fem">
-                    <label for="fem">Feminino</label>
-                </p>
-                <p><input type="button" value="Verificar" onclick="Verificar()"></p>
-                <div id="res">Preencha os dados acima para ver os resultados</div>
-            </div>
+    <section>
+        <div id="dados">
+            <p>Início <input type="number" name="inicio" id="inicio"></p>
+            <p>Fim <input type="number" name="fim" id="fim"></p>
+            <p>Passo <input type="number" name="passo" id="passo"></p>
+            <P><input type="button" value="contar" onclick="contar()"></P>
+        </div>
+        <div id="resultado">
+            Preparando a contagem...
+        </div>
+    </section>
+
+    <script>
+        function contar() {
+
+            var inicio = document.getElementById('inicio')
+            var fim = document.getElementById('fim')
+            var passo = document.getElementById('passo')
+            var resultado = document.getElementById('resultado')
+            if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+                alert('ERRO')
+            } else {
+                resultado.innerHTML = 'Contando...'
+                var i = Number(inicio.value)
+                var f = Number(fim.value)
+                var p = Number(passo.value)
+
+                if (i < f) {
+                    for(var c = i; c <= f; c += p) {
+                        resultado.innerHTML += ` ${c}`
+                    } else {
+                        for(var c = i; c >= f; c -= p) {
+                            resultado.innerHTML += `${c}` 
+                        }
+                    }
+                }
+            }
+
+
+        }
+    </script>
+      
+         
+</body>
+</html>
