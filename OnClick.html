@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h3 id="Título">Palmeiras não tem mundial</h3>
+    <button id="button" onclick="MudarTexto()">Mudar texto</button>
+</body>
+<script>
+    
+
+    function MudarTexto() {
+
+        const title = document.getElementById('Título');
+        title.innerHTML = '51 é cachaça'
+        title.style.color = 'red';
+        
+    }
+    
+</script>
+</html>

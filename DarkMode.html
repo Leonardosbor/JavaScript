@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <script>
+        const button = document.createElement('button');
+        button.innerHTML = 'Alterar Tema';
+        document.body.appendChild(button);
+
+        button.addEventListener('click', () => {
+            if(document.body.style.backgroundColor === 'black') {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+            } else {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+            }
+
+            
+        })
+
+    </script>
+</body>
+</html>

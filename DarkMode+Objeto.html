@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode + Objeto</title>
+</head>
+<body>
+    <script>
+        const DarkMode = {
+            background: 'black',
+            text: 'white',
+            name: 'DarkMode'
+        };
+
+        const LightMode = {
+            background: 'white',
+            text: 'black',
+            name: 'Light Mode'
+        };
+
+        function ApplyTheme(theme) {
+            document.body.style.backgroundColor = theme.background;
+            document.body.style.color = theme.text;
+            //console.log('Current name: ' + theme.name);
+        };
+
+
+        const button = document.createElement('button');
+        button.innerHTML = 'Mudar Tema';
+        document.body.appendChild(button);
+        
+
+        button.addEventListener('click', () => {
+            if (document.body.style.backgroundColor === 'black') {
+                ApplyTheme(LightMode);
+            } else {
+                ApplyTheme(DarkMode);
+            }
+        });
+    </script>
+</body>
+</html>
